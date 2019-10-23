@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Roboto", "Arial"
+}
+
+html, body {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+p, h3 {
+	margin-left: 10px;
+	margin-top: 5px;
+}
+
+p {
+	font-size: 14px; 
+	color: #444;
+}
+
+form {
+	margin-top: 30px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	width: 25%;
+	margin: 30px auto;
+}
+
+input[type=text] {
+	text-align: center;
+	padding: 10px 20px;
+	outline: none;
+}
+
+input[type=file] {
+	display: none;
+}
+
+label {
+	text-align: center;
+	padding: 10px 15px;
+	background: #313131;
+	color: white;
+	cursor: pointer;
+	font-size: 14px;
+}
+
+button {
+	border: 0;
+	background: #ee6b2f;
+	padding: 10px 15px;
+	cursor: pointer;
+	font-size: 20px;
+	outline: 0;
+	border-radius: 0 0 10px 10px;
+}
+
+button:hover {
+	background: #ee1b2f
+}
+
+.container {
+	margin: 0 auto;
+	max-width: 1024px;
+	flex: 1;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+.pokemon-container {
+	flex-basis: 25%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	transition: all .3s ease-in-out;
+}
+
+.pokemon-container:hover {
+	transform: translateY(10px);
+	cursor: pointer;
+}
+
+.pokemon-container img {
+	width: 90%;
+}
+
+.pokemon-types {
+	display: flex;
+	justify-content: space-between;
+	text-align: center;
+	margin: 5px 0;
+	width: 90%;
+}
+
+.pokemon-types span {
+	width: 50%;
+	margin: 0 5px;
+	padding: 3px 0;
+	border-radius: 5px;
+	font-size: 12px;
+}
+
+.grass {
+	background: #9bcc50;
+}
+
+.poison {
+	color: white;
+	background: #b97fc9;
+}
+
+.fire {
+	color: white;
+	background: #fd7d24;
+}
+
+.flying {
+	background: linear-gradient(180deg, #3dc7ef 50%, #bdb9b8 51%, #bdb9b8 100%);
+}
+
+.water {
+	color: white;
+	background: #4592c4;
+}
+
+@media screen and (max-width: 1024px) {
+	.pokemon-container {
+		flex-basis: 33%;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.pokemon-container {
+		flex-basis: 50%;
+	}
+}
+
+@media screen and (max-width: 510px) {
+	.pokemon-container {
+		flex-basis: 100%;
+	}
+}
