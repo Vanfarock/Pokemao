@@ -37,6 +37,7 @@ input[type=text] {
 	text-align: center;
 	padding: 10px 20px;
 	outline: none;
+	border: 0.5px solid #999;
 }
 
 input[type=file] {
@@ -66,6 +67,15 @@ button:hover {
 	background: #ee1b2f
 }
 
+.form-container {
+	display: flex;
+	flex-direction: row;
+}
+
+.first-input {
+	border-radius: 10px 10px 0 0;
+}
+
 .container {
 	margin: 0 auto;
 	max-width: 1024px;
@@ -74,6 +84,7 @@ button:hover {
 	flex-direction: row;
 	flex-wrap: wrap;
 	justify-content: space-between;
+	border: 1px solid red;
 }
 
 .pokemon-container {

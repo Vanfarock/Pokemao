@@ -5,147 +5,37 @@
 	<link rel="stylesheet" type="text/css" href="../static/css/style.css">
 </head>
 <body>
-	<form action="/add_pokemon">
-		<input type="text" name="name" placeholder="Pokemon Name">
-		<input type="text" name="number" placeholder="Pokemon Number">
-		<label for="pokemon-image">Pokemon Photo</label>
-		<input type="file" id="pokemon-image" name="image">
-		<button type="submit">Add New Pokemon</button>
-	</form>
+	<div class="form-container">
+		<form enctype="multipart/form-data" action="/add_pokemon" method="POST">
+			<input type="text" autocomplete="off" name="name" placeholder="Pokemon Name" class="first-input">
+			<input type="text" autocomplete="off" name="number" placeholder="Pokemon Number">
+			<input type="text" autocomplete="off" name="types" placeholder="Pokemon Types (Separated by SPACE)">
+			<label for="pokemon-image">Pokemon Photo</label>
+			<input type="file" id="pokemon-image" name="image" accept="image/x-png">
+			<button type="submit">Add New Pokemon</button>
+		</form>
+
+		<form>
+			<input type="text" name="new_type" placeholder="New Pokemon type" class="first-input">
+			<button type="submit">Save new Pokemon type</button>
+		</form>
+	</div>
+
 	<div class="container">
 		<div class="pokemon-container">
-			<img src="../static/images/001.png">
-			<p>Nº001</p>
-			<h3>Bulbasaur</h3>
-			<div class="pokemon-types">
-				<span class="grass">Grass</span>
-				<span class="poison">Poison</span>
-			</div>
-		</div>
-		<div class="pokemon-container">
-			<img src="../static/images/002.png">
-			<p>Nº002</p>
-			<h3>Ivysaur</h3>
-			<div class="pokemon-types">
-				<span class="grass">Grass</span>
-				<span class="poison">Poison</span>
-			</div>
-		</div>
-		<div class="pokemon-container">
-			<img src="../static/images/003.png">
-			<p>Nº003</p>
-			<h3>Venusaur</h3>
-			<div class="pokemon-types">
-				<span class="grass">Grass</span>
-				<span class="poison">Poison</span>
-			</div>
-		</div>
-		<div class="pokemon-container">
-			<img src="../static/images/004.png">
-			<p>Nº004</p>
-			<h3>Charmander<h3>
-			<div class="pokemon-types">
-				<span class="fire">Fire</span>
-			</div>
-		</div>
-		<div class="pokemon-container">
-			<img src="../static/images/005.png">
-			<p>Nº005</p>
-			<h3>Charmeleon</h3>
-			<div class="pokemon-types">
-				<span class="fire">Fire</span>
-			</div>
-		</div>
-		<div class="pokemon-container">
-			<img src="../static/images/006.png">
-			<p>Nº006</p>
-			<h3>Charizard</h3>
-			<div class="pokemon-types">
-				<span class="fire">Fire</span>
-				<span class="flying">Flying</span>
-			</div>
-		</div>
-		<div class="pokemon-container">
-			<img src="../static/images/007.png">
-			<p>Nº007</p>
-			<h3>Squirtle</h3>
-			<div class="pokemon-types">
-				<span class="water">Water</span>
-			</div>
-		</div>
-		<div class="pokemon-container">
-			<img src="../static/images/008.png">
-			<p>Nº008</p>
-			<h3>Watortle</h3>
-			<div class="pokemon-types">
-				<span class="water">Water</span>
-			</div>
-		</div>
-		<div class="pokemon-container">
-			<img src="../static/images/001.png">
-			<p>Nº001</p>
-			<h3>Bulbasaur</h3>
-			<div class="pokemon-types">
-				<span class="grass">Grass</span>
-				<span class="poison">Poison</span>
-			</div>
-		</div>
-		<div class="pokemon-container">
-			<img src="../static/images/001.png">
-			<p>Nº001</p>
-			<h3>Bulbasaur</h3>
-			<div class="pokemon-types">
-				<span class="grass">Grass</span>
-				<span class="poison">Poison</span>
-			</div>
-		</div>
-		<div class="pokemon-container">
-			<img src="../static/images/001.png">
-			<p>Nº001</p>
-			<h3>Bulbasaur</h3>
-			<div class="pokemon-types">
-				<span class="grass">Grass</span>
-				<span class="poison">Poison</span>
-			</div>
-		</div>
-		<div class="pokemon-container">
-			<img src="../static/images/001.png">
-			<p>Nº001</p>
-			<h3>Bulbasaur</h3>
-			<div class="pokemon-types">
-				<span class="grass">Grass</span>
-				<span class="poison">Poison</span>
-			</div>
-		</div>
-		<div class="pokemon-container">
-			<img src="../static/images/001.png">
-			<p>Nº001</p>
-			<h3>Bulbasaur</h3>
-			<div class="pokemon-types">
-				<span class="grass">Grass</span>
-				<span class="poison">Poison</span>
-			</div>
-		</div>
-		<div class="pokemon-container">
-			<img src="../static/images/001.png">
-			<p>Nº001</p>
-			<h3>Bulbasaur</h3>
-			<div class="pokemon-types">
-				<span class="grass">Grass</span>
-				<span class="poison">Poison</span>
-			</div>
-		</div>
-		<div class="pokemon-container">
-			<img src="../static/images/001.png">
-			<p>Nº001</p>
-			<h3>Bulbasaur</h3>
-			<div class="pokemon-types">
-				<span class="grass">Grass</span>
-				<span class="poison">Poison</span>
-			</div>
-		</div>
-		<div class="pokemon-container">
-			<img src="../static/images/001.png">
+			<!-- <img src="../static/images/001.png"> -->
+			<!-- <h1>
+				{% for i in pokemons %}
+					{{i.name}}
+					<br>
+					{{i.number}}
+					<br>
+					{{i.types}}
+					<br>
+					<br>
+				{% endfor %}
+			</h1> -->
+			<img src="{{url_for('static', filename='images/001.png')}}">
 			<p>Nº001</p>
 			<h3>Bulbasaur</h3>
 			<div class="pokemon-types">
@@ -154,5 +44,8 @@
 			</div>
 		</div>
 	</div>
+	<script type="text/javascript">
+		// let data = {{pokemons|tojson|safe}};
+	</script>
 </body>
 </html>
